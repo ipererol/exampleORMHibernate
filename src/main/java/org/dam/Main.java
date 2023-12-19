@@ -4,6 +4,8 @@ import org.dam.controller.StudentController;
 import org.dam.model.Student;
 import org.dam.util.HibernateUtil;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         Student student = new Student();
@@ -13,6 +15,11 @@ public class Main {
         student.setEmail("false@false.com");
         StudentController studentController = new StudentController();
         studentController.addStudent(student);
+        System.out.println("Numero de estudiantes: " +  studentController.getCountStudents());
+        System.out.println("Estudiantes con nombre Student");
+        for(Object[] st : studentController.getStudentsByName("Student")){
+            System.out.println(Arrays.toString(st));
+        }
         System.out.println(studentController.getStudentById(student.getId()));
         student.setPassword("1234");
         studentController.updateStudent(student);

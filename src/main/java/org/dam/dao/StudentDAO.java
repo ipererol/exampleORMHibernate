@@ -14,4 +14,11 @@ public interface StudentDAO {
     void deleteStudent(int studentId);
 
     List<Student> getAllStudents();
+
+    List<Object[]> getStudentsByName(String name);
+
+    List<Object[]> getStudentsByNameWithHQL(String name);
+
+
+    Long getCountStudents();
 }
