@@ -9,16 +9,17 @@ public interface StudentDAO {
 
     Student getStudentById(int studentId);
 
+    Student getStudentByName(String studentName);
+
+    Student getStudentByCode(String code);
+
     void updateStudent(Student student);
 
     void deleteStudent(int studentId);
 
     List<Student> getAllStudents();
 
-    List<Object[]> getStudentsByName(String name);
-
-    List<Object[]> getStudentsByNameWithHQL(String name);
-
+    List<Object[]> getStudentsByName(String name, String[] fields);
 
     Long getCountStudents();
 }
