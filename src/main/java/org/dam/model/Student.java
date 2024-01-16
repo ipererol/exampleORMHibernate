@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.Generated;
 
 @Entity
-@Table(name = "students", uniqueConstraints = {@UniqueConstraint(columnNames = {"name", "email"})})
+@Table(name = "students", indexes = {@Index(name="id_code", columnList = "code")}, uniqueConstraints = {@UniqueConstraint(columnNames = {"name", "email"})})
 public class Student {
 
     @Id

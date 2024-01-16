@@ -17,7 +17,8 @@ public class Main {
         studentController.addStudent(student);
         System.out.println("Numero de estudiantes: " +  studentController.getCountStudents());
         System.out.println("Estudiantes con nombre Student");
-        for(Object[] st : studentController.getStudentsByName("Student")){
+        String[] fields = {"name", "code"};
+        for(Object[] st : studentController.getStudentsByName("Student", fields)){
             System.out.println(Arrays.toString(st));
         }
         System.out.println(studentController.getStudentById(student.getId()));
